@@ -14,7 +14,7 @@ from .interface import (ODTC_ABORT, ODTC_CONNECT, ODTC_INIT, ODTC_CLOSE,
                         ODTC_PRTCL, ODTC_EVAL, ODTC_EXCT, ODTC_STATUS, 
                         ODTC_OPEN, ODTC_READ, ODTC_RESET, ODTC_STOP, ODTC_TERM)
 
-std_timeout = 5
+std_timeout = 60
 
 
 def odtc_abort(odtc, device_id, lock_id):

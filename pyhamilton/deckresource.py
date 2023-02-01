@@ -485,8 +485,19 @@ class Reservoir60mL:
         return '12345678'[idx]
 
 
-class EppiCarrier32(DeckResource):
+class Reservoir250mL(Standard96):
+    def __init__(self, layout_name):
+        self._layout_name = layout_name
+        self._num_items = 96
+        self.resource_type = DeckResource.types.VESSEL
+        self._items = [Vessel(self, i) for i in range(self._num_items)]
+        self.positions = [str(i+1) for i in range(96)]
+    
+    def position_id(self, idx):
+        return self.positions[idx]
 
+
+class EppiCarrier32(DeckResource):
     def __init__(self, layout_name):
         self._layout_name = layout_name
         self._num_items = 32

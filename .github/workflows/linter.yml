@@ -1,6 +1,10 @@
 name: Lint Code Base
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
 
 jobs:
   build:
@@ -14,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: github/super-linter@v4
+        uses: github/super-linter@v4.10.1
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_JAVASCRIPT_ES: true
